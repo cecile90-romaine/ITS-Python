@@ -17,9 +17,20 @@ print(make_album("cavolo", "marius"))  # ho creato il secondo dizionario
 print(make_album("caramella", "Natalia"))  # ho creato il terzo dizionario
 
 
-#edf make_dict(name_album: str, artist:str, song_title:str):
-#    return{"album": name_album, "artist":artist, "song":song_title}
+def make_dict(name_album: str, artist:str, song_num:str):
+    return{"album": name_album, "artist":artist, "num":song_num}
 
+#add the  song_num
+    if song_num:
+        album["song_num"] = "song_num"
+        return album
+album1 = make_dict("amore", "alessandra", "13")
+album2 = make_dict("fiori", "achille", "7")
+album3 = make_dict("miracoli", "miranda", "9")
+
+print(album1)
+print(album2)
+print(album3)
 
 
  
