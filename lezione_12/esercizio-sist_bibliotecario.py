@@ -28,3 +28,17 @@ Codice Driver
 
 """
 
+class Libro:
+    def __init__(self) -> None:
+        self.setLibro()
+    def getLibro(self) -> dict[str, list[str]]:
+        return self.libro
+    def setLibro(self) -> None:
+        self.libro:dict[str, list[str]] = {}
+    def __str__(self) -> str:
+
+        string:str = "Libro"
+        
+        
+
+            
