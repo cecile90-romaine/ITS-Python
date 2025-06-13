@@ -3,7 +3,7 @@ from class_movie import Movie
 from class_customer import Customer
 class VideoRentalStore:
 
-    def __init__(self, movies: dict[str, Movie], customers:dict[str, Customer]):
+    def __init__(self, movies: dict[str, Movie], customers:dict[str, Custumer]):
         self.movies = movies
         self.customers = customers
 
@@ -38,7 +38,7 @@ class VideoRentalStore:
 
         if movie and movie:
 
-            if customer not in self.customers.rented_movies:
+           if customer not in self.customers.rented_movies:
                
                customer.rented_movies = movie
             else:

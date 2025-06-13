@@ -1,11 +1,19 @@
 from string import ascii_lowercase, ascii_uppercase
 
 
-def sum_primary_diagonal(matrix):
-    return sum(matrix[i][i] 
-               for i in range(len(matrix)))
+def sum_primary_diagonal(matrix:list)-> int:
+    sum:int = 0
+    for i in range(len(matrix)):
+        for k in range(len(matrix[i])):
+             
+              
+             if i == k:
+                 sum +=matrix[i][k]
+    return sum
+       
+            
 
-def sum_secondary_diagonal(matrix):
+def sum_secondary_diagonal(matrix:list) -> int:
     n = len(matrix)
     return sum(matrix[i][n - 1 - i]
                 for i in range(n))

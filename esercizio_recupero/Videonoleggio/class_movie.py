@@ -37,6 +37,21 @@ class Movie:
         
         else:
             print(f"il film {self.title} non è stao noleggiato da questo cliente")
+
+
+# corezione
+
+class Movie:
+
+    def __unit__(self, movie_id:str, title:str, director:str,) -> str:
+        
+        
+        self.movie_id = movie_id
+        self.title = title
+        self.director = director
+        self.is_rented: bool = False
+
+    def rent(self) -> None:
         
 
 

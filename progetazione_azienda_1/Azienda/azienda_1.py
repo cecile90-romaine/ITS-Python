@@ -1,6 +1,8 @@
-from re import *
-from datetime import datetime
-
+import re
+from datetime import date
+from typing import Self
+from custom_types import*
+from __future__ import annotations
 class Importo(float):
     def __new__(cls, v:int|float|str)->self:
         if v < 0:
@@ -9,8 +11,8 @@ class Importo(float):
     
 class Dipartimento:
  
-nome: str # noto alla nascita
-telefono: Telefono # noto alla nascita
+  nome: str # noto alla nascita
+  telefono:Telefono # noto alla nascita
 
 def __init__(self)->str:
     
@@ -20,16 +22,17 @@ def __init__(self)->str:
 class _afferenza:
     _impiegato: Impiegato # ovviamento noto alla nascita
     _dipartimento: Dipartimento # ovviamento noto alla nascita e immutabile
-    _data_afferenza: data # immutabile, noto alla nasita
+    _data_afferenza: date# immutabile, noto alla nasita
 
 def impiegati (self) -> Impiegato:
     return
 
 
-    
+
     
 class Telefono(str):
-    def __new__(cls, v:str)->self:
+    def __new__(cls, v:str)-> Self:
+
         if not re.fullmatch(r'\+?[0-9]+', v):
             raise ValueError(f"Vlue v == {v} does  not satisfy the standard")
         
@@ -39,11 +42,11 @@ class Telefono(str):
 class Impiegato:
     _nome:str # noto alla nascita
     _cognome:str # noto alla nascita
-    _nascita:data#immutabile, noto alla nascita
+    _nascita:date #immutabile, noto alla nascita
     _stipendio:Importo # noto alla nascita
     _dipartimento_afferenza:Dipartimento | None # da attribuito di assoc. 'afferenza' [o..1] possibilmente non noto alla nascita
     _data_afferenza:date | None # da attribuito di assoc.'afferenza' immutabile
-def __init__(self, nome:str, cognome:str, nascita:data, stipendio: Importo )-> None:
+def __init__(self, nome:str, cognome:str, nascita:date, stipendio: Importo )-> None:
     self.set_nome(nome)
     self.set_cognome(cognome)
     self.nascita = nascita
